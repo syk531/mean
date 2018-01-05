@@ -1,26 +1,11 @@
-
-
 <div>
-	
-	id : <input type="text" name="id"/>
-	password : <input type="text" name="password"/>
-	<a routerLink="/login">로그인</a>
-	<a routerLink="/signUp">회원가입</a>
-
+	<p style="font-family: 'Vast Shadow', cursive; font-size: 40px; font-weight:bolder; letter-spacing: 5px;">mean 사이트입니다.</p>
+	<a routerLink="/mypage">마이페이지로 이동</a>
+	<br/>
+	<a routerLink="/login">로그인페이지로 이동</a>
+	<br/><br/>
 </div>
 
-<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
-	
-	
 <div>
 	<router-outlet></router-outlet>
 </div>
-
-<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.11&appId=1949513565298116';
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>

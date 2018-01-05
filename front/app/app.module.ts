@@ -7,6 +7,7 @@ import { AppRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './member/component/signUp.component';
 import { LoginComponent } from './member/component/login.component';
+import { MypageComponent } from './member/component/mypage.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './member/component/login.component';
     declarations: [
         AppComponent,
         SignUpComponent,
-        LoginComponent
+        LoginComponent,
+        MypageComponent
     ],
     providers:[],
     bootstrap: [AppComponent]

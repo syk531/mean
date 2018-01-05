@@ -13,6 +13,7 @@ const app_routing_1 = require("./app.routing");
 const app_component_1 = require("./app.component");
 const signUp_component_1 = require("./member/component/signUp.component");
 const login_component_1 = require("./member/component/login.component");
+const mypage_component_1 = require("./member/component/mypage.component");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,7 +26,8 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             signUp_component_1.SignUpComponent,
-            login_component_1.LoginComponent
+            login_component_1.LoginComponent,
+            mypage_component_1.MypageComponent
         ],
         providers: [],
         bootstrap: [app_component_1.AppComponent]

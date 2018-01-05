@@ -10,7 +10,9 @@ const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
 const signUp_component_1 = require("./member/component/signUp.component");
 const login_component_1 = require("./member/component/login.component");
+const mypage_component_1 = require("./member/component/mypage.component");
 const routes = [
+    { path: 'mypage', component: mypage_component_1.MypageComponent },
     { path: 'signUp', component: signUp_component_1.SignUpComponent },
     { path: 'login', component: login_component_1.LoginComponent }
 ];
