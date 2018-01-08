@@ -10,27 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const member_service_1 = require("../service/member.service");
-let MypageComponent = class MypageComponent {
-    constructor(memberService) {
-        this.memberService = memberService;
+const http_1 = require("@angular/http");
+let MemberService = class MemberService {
+    constructor(http) {
+        this.http = http;
     }
-    ngOnInit() {
-        this.memberService.getMemberInfo().subscribe(data => {
-            this.memberInfo = data.json();
-            console.log('11111');
-            console.dir(data.json());
-            console.log('2222');
-            console.dir(data);
-        });
+    getMemberInfo() {
+        return this.http.get('/api/member/getMemberInfo');
     }
 };
-MypageComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: './mypage.html',
-    }),
-    __metadata("design:paramtypes", [member_service_1.MemberService])
-], MypageComponent);
-exports.MypageComponent = MypageComponent;
-//# sourceMappingURL=mypage.component.js.map
+MemberService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], MemberService);
+exports.MemberService = MemberService;
+//# sourceMappingURL=member.service.js.map

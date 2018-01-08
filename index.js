@@ -13,6 +13,24 @@ app.get('/', function(req, res) {
 	res.sendfile('./front/index.html');
 });
 
+var todos = [{
+	  id: 1,
+	  title: 'todo 1',
+	  completed: false
+	}, {
+	  id: 2,
+	  title: 'todo 2',
+	  completed: false
+	}, {
+	  id: 3,
+	  title: 'todo 3',
+	  completed: true
+	}];
+
+app.get('/api/member/getMemberInfo', function(req, res) {
+	res.json(todos);
+});
+
 app.listen(process.env.PORT || 3000, function(){ //heroku port 가 동적으로 변해서 포트 세팅되게
 	console.log('server starting');
 })

@@ -9,6 +9,8 @@ import { SignUpComponent } from './member/component/signUp.component';
 import { LoginComponent } from './member/component/login.component';
 import { MypageComponent } from './member/component/mypage.component';
 
+import { MemberService } from './member/service/member.service';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -21,7 +23,7 @@ import { MypageComponent } from './member/component/mypage.component';
         LoginComponent,
         MypageComponent
     ],
-    providers:[],
+    providers:[MemberService],
     bootstrap: [AppComponent]
 })
 
