@@ -12,9 +12,9 @@ const signUp_component_1 = require("./member/component/signUp.component");
 const login_component_1 = require("./member/component/login.component");
 const mypage_component_1 = require("./member/component/mypage.component");
 const routes = [
-    { path: 'mypage', component: mypage_component_1.MypageComponent },
-    { path: 'signUp', component: signUp_component_1.SignUpComponent },
-    { path: 'login', component: login_component_1.LoginComponent }
+    { path: 'member/mypage', component: mypage_component_1.MypageComponent },
+    { path: 'member/signUp', component: signUp_component_1.SignUpComponent },
+    { path: 'member/login', component: login_component_1.LoginComponent }
 ];
 let AppRouting = class AppRouting {
 };

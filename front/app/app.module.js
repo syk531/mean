@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
 const http_1 = require("@angular/http");
+const forms_1 = require("@angular/forms");
 const app_routing_1 = require("./app.routing");
 const app_component_1 = require("./app.component");
 const signUp_component_1 = require("./member/component/signUp.component");
@@ -22,7 +23,9 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
-            app_routing_1.AppRouting
+            app_routing_1.AppRouting,
+            forms_1.FormsModule,
+            forms_1.ReactiveFormsModule
         ],
         declarations: [
             app_component_1.AppComponent,

@@ -18,6 +18,10 @@ let MemberService = class MemberService {
     getMemberInfo() {
         return this.http.get('/api/member/getMemberInfo');
     }
+    registUser(serializedForm) {
+        const headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        return this.http.post('/api/member/registUser', serializedForm, { headers });
+    }
 };
 MemberService = __decorate([
     core_1.Injectable(),
