@@ -10,7 +10,13 @@ export class MemberService {
   }
   
   registUser(serializedForm) {
-    const headers = new Headers({'Content-Type': 'application/json'});
+    var headers = new Headers({'Content-Type': 'application/json'});
     return this.http.post('/api/member/registUser', serializedForm, {headers});
   }
+  
+  loginUser(serializedForm) {
+    var headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post('/api/member/loginUser', serializedForm, {headers});
+  }
+  
 }
