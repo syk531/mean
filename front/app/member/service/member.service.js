@@ -19,8 +19,15 @@ let MemberService = class MemberService {
         return this.http.get('/api/member/getMemberInfo');
     }
     registUser(serializedForm) {
-        const headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         return this.http.post('/api/member/registUser', serializedForm, { headers });
+    }
+    login(serializedForm) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        return this.http.post('/api/member/login', serializedForm, { headers });
+    }
+    logout() {
+        return this.http.get('/api/member/logout');
     }
 };
 MemberService = __decorate([

@@ -36,15 +36,13 @@ let SignUpComponent = class SignUpComponent {
                 alert('회원가입에 실패하였습니다.');
             }
             this.router.navigateByUrl('/member/login');
-            //location.href = '/member/login';
         });
     }
 };
 SignUpComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'signUP-selector',
-        templateUrl: './signUp.html',
+        templateUrl: './signUp.html'
     }),
     __metadata("design:paramtypes", [member_service_1.MemberService, router_1.Router])
 ], SignUpComponent);

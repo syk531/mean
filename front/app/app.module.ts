@@ -8,6 +8,7 @@ import { AppRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './member/component/signUp.component';
 import { LoginComponent } from './member/component/login.component';
+import { LogoutComponent } from './member/component/logout.component';
 import { MypageComponent } from './member/component/mypage.component';
 
 import { MemberService } from './member/service/member.service';
@@ -24,6 +25,7 @@ import { MemberService } from './member/service/member.service';
         AppComponent,
         SignUpComponent,
         LoginComponent,
+        LogoutComponent,
         MypageComponent
     ],
     providers:[MemberService],

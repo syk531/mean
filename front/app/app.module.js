@@ -14,6 +14,7 @@ const app_routing_1 = require("./app.routing");
 const app_component_1 = require("./app.component");
 const signUp_component_1 = require("./member/component/signUp.component");
 const login_component_1 = require("./member/component/login.component");
+const logout_component_1 = require("./member/component/logout.component");
 const mypage_component_1 = require("./member/component/mypage.component");
 const member_service_1 = require("./member/service/member.service");
 let AppModule = class AppModule {
@@ -31,6 +32,7 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             signUp_component_1.SignUpComponent,
             login_component_1.LoginComponent,
+            logout_component_1.LogoutComponent,
             mypage_component_1.MypageComponent
         ],
         providers: [member_service_1.MemberService],

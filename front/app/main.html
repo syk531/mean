@@ -2,10 +2,13 @@
 	<p style="font-family: 'Vast Shadow', cursive; font-size: 40px; font-weight:bolder; letter-spacing: 5px;">테스트</p>
 	<a routerLink="/member/mypage">마이페이지로 이동</a>
 	<br/>
-	<a routerLink="/member/login">로그인페이지로 이동</a>
+	
+	<a id="loginAnchor" routerLink="/member/login">로그인페이지로 이동</a>
+	<a id="logoutAnchor" routerLink="/member/logout" style="display: none;">로그아웃</a>
 	<br/><br/>
 </div>
 
 <div>
 	<router-outlet></router-outlet>
 </div>
+

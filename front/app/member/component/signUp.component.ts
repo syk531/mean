@@ -6,8 +6,7 @@ import { MemberService } from '../service/member.service'
 
 @Component({
   moduleId: module.id,
-  selector: 'signUP-selector',
-  templateUrl: './signUp.html',
+  templateUrl: './signUp.html'
 })
 
 export class SignUpComponent {

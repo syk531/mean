@@ -4,16 +4,16 @@
 		<div class="login-box-body">
 			<div class="log_box">
 				<dl>
-					<dt class="uid"><label for="userId">아이디</label></dt>
-					<dd><input type="text" formControlName="userId" class="form-control" title="아이디 입력" value="" autofocus=""></dd>
-					<dt class="upw"><label for="pwd">패스워드</label></dt>
-					<dd><input type="password" formControlName="pwd" maxlength="15" class="form-control" title="비밀번호 입력"></dd>
+					<dt class="uid"><label for="username">아이디</label></dt>
+					<dd><input type="text" formControlName=username class="form-control" title="아이디 입력" value="" autofocus=""></dd>
+					<dt class="upw"><label for="password">패스워드</label></dt>
+					<dd><input type="password" formControlName="password" maxlength="15" class="form-control" title="비밀번호 입력"></dd>
 					<dt class="uid" id="caps"></dt>
 				</dl>
 				
 				<div class="row">
 					<div class="col-xs-6">
-						<button class="btn btn-success btn-flat" routerLink="/member/login">로그인</button>
+						<button class="btn btn-success btn-flat" (click)="login()">로그인</button>
 					</div>
 					<div class="col-xs-6">
 						<button class="btn btn-success btn-flat" routerLink="/member/signUp">회원가입</button>

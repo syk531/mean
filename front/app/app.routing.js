@@ -10,11 +10,13 @@ const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
 const signUp_component_1 = require("./member/component/signUp.component");
 const login_component_1 = require("./member/component/login.component");
+const logout_component_1 = require("./member/component/logout.component");
 const mypage_component_1 = require("./member/component/mypage.component");
 const routes = [
     { path: 'member/mypage', component: mypage_component_1.MypageComponent },
     { path: 'member/signUp', component: signUp_component_1.SignUpComponent },
-    { path: 'member/login', component: login_component_1.LoginComponent }
+    { path: 'member/login', component: login_component_1.LoginComponent },
+    { path: 'member/logout', component: logout_component_1.LogoutComponent }
 ];
 let AppRouting = class AppRouting {
 };

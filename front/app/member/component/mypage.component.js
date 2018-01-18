@@ -10,18 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
 const member_service_1 = require("../service/member.service");
 let MypageComponent = class MypageComponent {
-    constructor(memberService) {
+    constructor(memberService, router) {
         this.memberService = memberService;
+        this.router = router;
     }
     ngOnInit() {
-        this.memberService.getMemberInfo().subscribe(data => {
-            this.memberInfo = data.json();
-            console.log('11111');
-            console.dir(data.json());
-            console.log('2222');
-            console.dir(data);
+        this.memberService.getMemberInfo().subscribe(res => {
+            var data = res.json();
+            if (data.resultCode === '200') {
+                this.userId = '회원아이디 : ' + data.userId;
+                this.userName = '회원명 : ' + data.userName;
+            }
+            else {
+                this.router.navigateByUrl('/member/login');
+            }
         });
     }
 };
@@ -30,7 +35,7 @@ MypageComponent = __decorate([
         moduleId: module.id,
         templateUrl: './mypage.html',
     }),
-    __metadata("design:paramtypes", [member_service_1.MemberService])
+    __metadata("design:paramtypes", [member_service_1.MemberService, router_1.Router])
 ], MypageComponent);
 exports.MypageComponent = MypageComponent;
 //# sourceMappingURL=mypage.component.js.map

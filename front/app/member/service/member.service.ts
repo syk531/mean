@@ -14,9 +14,12 @@ export class MemberService {
     return this.http.post('/api/member/registUser', serializedForm, {headers});
   }
   
-  loginUser(serializedForm) {
+  login(serializedForm) {
     var headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('/api/member/loginUser', serializedForm, {headers});
+    return this.http.post('/api/member/login', serializedForm, {headers});
   }
-  
+    
+    logout() {
+        return this.http.get('/api/member/logout');
+    }  
 }
