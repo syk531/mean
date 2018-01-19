@@ -29,6 +29,9 @@ let MemberService = class MemberService {
     logout() {
         return this.http.get('/api/member/logout');
     }
+    facebookLogin() {
+        return this.http.get('/api/member/facebookLogin');
+    }
 };
 MemberService = __decorate([
     core_1.Injectable(),

@@ -43,6 +43,24 @@ let LoginComponent = class LoginComponent {
             this.router.navigateByUrl('/member/login');
         });
     }
+    facebookLogin() {
+        this.memberService.facebookLogin().subscribe(res => {
+            var data = res.json();
+            if (data.resultCode === '200') {
+                document.getElementById('loginAnchor').style.display = 'none';
+                document.getElementById('logoutAnchor').style.display = 'block';
+                alert('로그인 되었습니다.');
+                this.router.navigateByUrl('/member/mypage');
+            }
+            else {
+                alert('로그인에 실패하였습니다.');
+                this.router.navigateByUrl('/member/login');
+            }
+        }, error => {
+            alert('로그인에 실패하였습니다.');
+            this.router.navigateByUrl('/member/login');
+        });
+    }
 };
 LoginComponent = __decorate([
     core_1.Component({

@@ -7,6 +7,7 @@ var mysql      = require('mysql');
 var sha256      = require('sha256');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 var conn = mysql.createConnection({
   host     : 'localhost',
@@ -160,6 +161,35 @@ passport.use(new LocalStrategy(
 
 app.post('/api/member/login', 
 	passport.authenticate('local'), 	
+	function(req, res) {
+		var resultData = {
+			resultCode : '200'
+		}
+		
+		if (!res) { //로그인실패
+			resultData.resultCode = '600';
+		}
+		console.log('resultData.resultCode : ' + resultData.resultCode);
+		res.send(JSON.stringify(resultData));
+	}
+);
+
+passport.use(new FacebookStrategy({
+    clientID: '1949513565298116',
+    clientSecret: '957c4c98c04150611c3f4e0d2680cfa2',
+    callbackURL: "/api/member/facebookLogin/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+	  console.log('profile : ', profile);
+  }
+));
+
+app.get('/api/member/facebookLogin', 
+	passport.authenticate('facebook')
+);
+
+app.get('/api/member/facebookLogin/callback',
+	passport.authenticate('facebook'),
 	function(req, res) {
 		var resultData = {
 			resultCode : '200'
