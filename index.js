@@ -8,6 +8,7 @@ var sha256      = require('sha256');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
 
 var conn = mysql.createConnection({
   host     : 'localhost',
@@ -202,6 +203,37 @@ app.get('/api/member/facebookLogin/callback',
 		res.send(JSON.stringify(resultData));
 	}
 );
+
+/*
+passport.use(new TwitterStrategy({
+    consumerKey: TWITTER_CONSUMER_KEY,
+    consumerSecret: TWITTER_CONSUMER_SECRET,
+    callbackURL: "/api/member/twitterLogin/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+	  console.log('profile : ', profile);
+  }
+));
+
+app.get('/api/member/twitterLogin', 
+	passport.authenticate('twitter')
+);
+
+app.get('/api/member/twitterLogin/callback',
+	passport.authenticate('twitter'),
+	function(req, res) {
+		var resultData = {
+			resultCode : '200'
+		}
+		
+		if (!res) { //로그인실패
+			resultData.resultCode = '600';
+		}
+		console.log('resultData.resultCode : ' + resultData.resultCode);
+		res.send(JSON.stringify(resultData));
+	}
+);
+*/
 
 app.get('/api/member/logout', function(req, res) {
 	console.log('logout before req : ' + req);
