@@ -11,7 +11,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 
 var conn = mysql.createConnection({
-  host     : 'localhost',
+  host     : '175.123.170.78',
   user     : 'syk531',
   password : '1q2w3e4r!',
   database : 'syk531'
@@ -27,7 +27,7 @@ app.use(session({
 	resave : false,
 	saveUninitialized: true,
 	store : new MySQLStore({
-		host     : 'localhost',
+		host     : '175.123.170.78',
 		port	 : 3306,
 		user     : 'syk531',
 		password : '1q2w3e4r!',
